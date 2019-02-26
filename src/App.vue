@@ -16,11 +16,14 @@
         <!-- info -->
         <div>所在位置：{{result}}</div>
         <div>所在城市：{{cty.pname}}&nbsp;{{cty.name}}</div>
-        <div>当前天气：{{sfc.banner}}</div>
         <!-- 天气 -->
-        <el-table :data="sfc.percent" border style="width: 30%" >
-          <el-table-column prop="desc" label="每小时天气" align="center">
+        <el-table :data="hourly" border style="width:100%" >
+          <el-table-column  label="时" align="center">
+            <template slot-scope="info">
+              <el-tag>{{info.row.hour}}时</el-tag>
+            </template>
           </el-table-column>
+          <el-table-column prop="condition" label="天气" align="center"></el-table-column>
         </el-table>
         <el-row>
           <h2>未来十五天天气</h2>
@@ -77,6 +80,7 @@
             }
           }],
           // 实况天气
+          hourly:[],
           cty:{
             pname:'',
             name:''
@@ -94,10 +98,11 @@
           // 传参 lat(纬度) lon(经度)   经纬度 
           // const ret = await this.$http.post('http://aliv8.data.moji.com/whapi/json/aliweather/shortforecast',{lat:this.lat,lon:this.lng});
           // console.log(ret);
-          const ret = await this.$http.post('http://aliv8.data.moji.com/whapi/json/aliweather/shortforecast',{lat:this.lat,lon:this.lng});
-          console.log(ret.body.data);
+          const ret = await this.$http.post('http://aliv8.data.moji.com/whapi/json/aliweather/forecast24hours',{lat:this.lat,lon:this.lng});
+          console.log(ret.data);
           this.cty = ret.body.data.city
-          this.sfc = ret.body.data.sfc
+          // this.sfc = ret.body.data.sfc
+          this.hourly = ret.data.data.hourly;
         },
         async getWeather15() {
           const ret = await this.$http.post('http://aliv8.data.moji.com/whapi/json/aliweather/forecast15days',{lat:this.lat,lon:this.lng})
