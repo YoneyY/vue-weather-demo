@@ -1,3 +1,5 @@
+Author：YoneyY & YearsY
+
 ## 短时预报
 
 调用接口：http://aliv8.data.moji.com/whapi/json/aliweather/shortforecast
