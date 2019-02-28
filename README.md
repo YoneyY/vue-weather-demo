@@ -1,4 +1,4 @@
-作者：于天源  YoneyY
+Author：YoneyY & YearsY
 
 ## 短时预报
 
