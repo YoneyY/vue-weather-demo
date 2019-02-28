@@ -5,17 +5,29 @@ import store from "./store";
 import './plugins/element.js'
 import './assets/css/globel.css'
 Vue.config.productionTip = false;
+// element-ui 按需引用开始
+// import {
+//   Table,
+//   TableColumn,
+//   Card,
+//   Tag
+// } from 'element-ui';
+// Vue.use(Table);
+// Vue.use(TableColumn);
+// Vue.use(Tag);
+// Vue.use(Card);
+// element-ui 按需引用结束
 
 import ElementUI from 'element-ui';
 import VueAMap from 'vue-amap';
 // import axios from 'axios';
 import VueResource from 'vue-resource'
-import MuseUI from 'muse-ui';
-import 'muse-ui/dist/muse-ui.css';
+// import MuseUI from 'muse-ui';
+// import 'muse-ui/dist/muse-ui.css';
 Vue.use(ElementUI);
 Vue.use(VueAMap);
 Vue.use(VueResource);
-Vue.use(MuseUI);
+// Vue.use(MuseUI);
 
 Vue.http.options.emulateJSON = true; // 开启后可以跨域
 Vue.http.interceptors.push((request, next) => {
