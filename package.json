@@ -29,6 +29,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
+    "muse-ui": "^3.0.2",
     "vue-amap": "^0.5.8",
     "vue-cli-plugin-element": "^1.0.1",
     "vue-resource": "^1.5.1",
