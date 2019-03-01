@@ -4,6 +4,7 @@ import router from "./router";
 import store from "./store";
 import './plugins/element.js'
 import './assets/css/globel.css'
+import './assets/fonts/iconfont.css'
 Vue.config.productionTip = false;
 // element-ui 按需引用开始
 // import {
@@ -20,14 +21,10 @@ Vue.config.productionTip = false;
 
 import ElementUI from 'element-ui';
 import VueAMap from 'vue-amap';
-// import axios from 'axios';
 import VueResource from 'vue-resource'
-// import MuseUI from 'muse-ui';
-// import 'muse-ui/dist/muse-ui.css';
 Vue.use(ElementUI);
 Vue.use(VueAMap);
 Vue.use(VueResource);
-// Vue.use(MuseUI);
 
 Vue.http.options.emulateJSON = true; // 开启后可以跨域
 Vue.http.interceptors.push((request, next) => {
